@@ -1,33 +1,93 @@
 # Yuga
 
-A [libGDX](https://libgdx.com/) project generated with [gdx-liftoff](https://github.com/libgdx/gdx-liftoff).
+> **A mythic action-adventure concept set in a future Bharat, where a lost prince must awaken the power of Dharma to face a cosmic darkness.**
 
-This project was generated with a template including simple application launchers and an `ApplicationAdapter` extension that draws libGDX logo.
+**Yuga: The Chronicles of the Dharma Warrior** is a Java game project built with [libGDX](https://libgdx.com/). Its story and art direction draw on Indian mythology, Vedic cosmology, sacred geography, and the contrast between divine radiance and cosmic entropy.
 
-## Platforms
+The repository currently contains the libGDX desktop starter application alongside the game's story and visual-design documents. The full game described in those documents is a creative direction, not yet implemented gameplay.
 
-- `core`: Main module with the application logic shared by all platforms.
-- `lwjgl3`: Primary desktop platform using LWJGL3; was called 'desktop' in older docs.
+## The world of Yuga
 
-## Gradle
+In the 31st century, Yuga—a lost prince from the parallel realm of Aryavarta-Loka—is raised by sages near Mount Kailash. When the darkness of Kali Asura threatens Earth, Yuga's journey leads across sacred places including Kashi, Kedarnath, Bodh Gaya, and the Himalayas. He must face trials of truth, selflessness, and mastery before he can defend the world from the Andhaka Void.
 
-This project uses [Gradle](https://gradle.org/) to manage dependencies.
-The Gradle wrapper was included, so you can run Gradle tasks using `gradlew.bat` or `./gradlew` commands.
-Useful Gradle tasks and flags:
+The project's visual identity, **Vedic Illuminated Cartography**, imagines the world as a living pilgrimage map: hand-painted landmarks, parchment textures, sacred geometry, luminous rivers, and a visual conflict between warm, solar radiance and shadowed corruption.
 
-- `--continue`: when using this flag, errors will not stop the tasks from running.
-- `--daemon`: thanks to this flag, Gradle daemon will be used to run chosen tasks.
-- `--offline`: when using this flag, cached dependency archives will be used.
-- `--refresh-dependencies`: this flag forces validation of all dependencies. Useful for snapshot versions.
-- `build`: builds sources and archives of every project.
-- `cleanEclipse`: removes Eclipse project data.
-- `cleanIdea`: removes IntelliJ project data.
-- `clean`: removes `build` folders, which store compiled classes and built archives.
-- `eclipse`: generates Eclipse project data.
-- `idea`: generates IntelliJ project data.
-- `lwjgl3:jar`: builds application's runnable jar, which can be found at `lwjgl3/build/libs`.
-- `lwjgl3:run`: starts the application.
-- `test`: runs unit tests (if any).
+## Project status
 
-Note that most tasks that are not specific to a single project can be run with `name:` prefix, where the `name` should be replaced with the ID of a specific project.
-For example, `core:clean` removes `build` folder only from the `core` project.
+Yuga is an early-stage project. The current runnable application is the generated libGDX starter screen; the story and visual style are documented as the project's creative and design direction. Features such as exploration, combat, map progression, custom shaders, and the story campaign are not yet implemented.
+
+## Project structure
+
+This is a Gradle multi-project build:
+
+| Module / file | Purpose |
+| --- | --- |
+| `core/` | Shared Java application code and game dependencies. |
+| `lwjgl3/` | Desktop launcher and LWJGL3 backend. |
+| `assets/` | Shared runtime assets. |
+| `STORY.md` | Story premise, characters, trials, and sacred geography. |
+| `STYLE.md` | Visual-art direction and technical design reference. |
+| `MEMORY.md` | Compact project lore and style reference. |
+| `LEVELS.md` | Reserved for level-design documentation. |
+
+The core module declares libGDX and supporting libraries including Ashley, gdx-ai, Box2D, FreeType, and Box2DLights. The desktop module launches the shared core application.
+
+## Getting started
+
+### Requirements
+
+- A Git client
+- A JDK supported by the included Gradle wrapper
+
+### Run the desktop starter
+
+Clone the repository and launch the LWJGL3 desktop application:
+
+```bash
+git clone https://github.com/Viseking/Yuga.git
+cd Yuga
+./gradlew lwjgl3:run
+```
+
+On Windows, use `gradlew.bat` instead of `./gradlew`:
+
+```powershell
+.\gradlew.bat lwjgl3:run
+```
+
+### Build
+
+Build all modules:
+
+```bash
+./gradlew build
+```
+
+Build the runnable desktop JAR:
+
+```bash
+./gradlew lwjgl3:jar
+```
+
+The JAR is written to `lwjgl3/build/libs/`. To remove generated build outputs, run `./gradlew clean`.
+
+## Design references
+
+- [Story and lore](STORY.md)
+- [Visual style guide](STYLE.md)
+- [Project memory](MEMORY.md)
+
+## Technology
+
+- **Language:** Java (Java 8 source and target compatibility)
+- **Game framework:** libGDX
+- **Desktop backend:** LWJGL3
+- **Build system:** Gradle Wrapper
+
+## Contributing
+
+Yuga is at an early stage, and contributions that help turn its documented vision into a playable game are welcome. Before proposing substantial gameplay, art, or level changes, please consult `STORY.md` and `STYLE.md` so new work stays aligned with the project's narrative and visual direction.
+
+## License
+
+See [LICENSE](LICENSE) for the terms that apply to this repository.
